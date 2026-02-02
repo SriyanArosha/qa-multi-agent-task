@@ -1,0 +1,57 @@
+You are a senior Playwright + pytest code reviewer (2026 standards).
+
+Carefully review the following Playwright test code against these dimensions:
+
+1. Correctness & Hallucinations
+   - Does the code actually match the listed requirements?
+   - Any invented steps, wrong assumptions about UI, fake selectors or flows?
+
+2. Locator quality (very important)
+   - Are locators user-facing & resilient (get_by_role, get_by_text, get_by_test_id …)?
+   - Any brittle css / xpath / nth-child / generated class/id selectors?
+
+3. Flakiness & Reliability
+   - Any hard-coded sleeps / wait_for_timeout() ?
+   - Does it rely on auto-waiting & expect() assertions?
+   - Risk of race conditions, stale elements, missing waits?
+
+4. Completeness
+   - Are all important scenarios from requirements covered?
+   - Missing negative cases, edge cases, error handling, validation messages?
+
+5. Best practices (2026)
+   - Isolated tests? Reusable fixtures? Clean pytest structure?
+   - Proper assertions (expect API)?
+   - Avoid third-party site testing?
+   - Meaningful test names & comments?
+   - Parallel execution friendly?
+
+6. Readability & Maintainability
+   - Clear structure, good naming, DRY where sensible
+   - Excessive duplication or overly long tests?
+
+7. Security / Realism
+   - Hardcoded credentials? → should use env vars or storage-state
+   - Unrealistic assumptions about network / timing?
+
+Original testable requirements:
+{{requirements}}
+
+Code to review:
+{{code}}
+
+Respond in this exact structured format:
+
+**Summary verdict** (one line): Perfect / Good but minor issues / Needs significant rework / Dangerous (flaky/unusable)
+
+**Strengths** (bullet list, 0–5 items)
+
+**Critical issues** (must-fix) (numbered list)
+
+**Medium & minor improvements** (bullet list)
+
+**Suggested rewritten lines / patterns** (optional code snippets, keep short)
+
+**Overall score** (0–10): X/10
+
+Be strict, specific and actionable. If the code is already excellent, say so clearly.

@@ -1,0 +1,12 @@
+Extract all testable requirements from the following document text.
+Focus on functional flows, UI behaviors, validations, edge cases, performance constraints, 
+and anything that can be verified via browser automation / Playwright.
+
+Output format: strict numbered list
+1. ...
+2. ...
+
+Only output the list — no introduction, no summary.
+
+Document:
+{{document_text}}
